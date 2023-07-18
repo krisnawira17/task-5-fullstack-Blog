@@ -32,16 +32,12 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             @auth
-                            <a class="nav-link" href="#">Create Post</a>
+                            <a class="nav-link" href="{{route('article.create')}}">Create Post</a>
                             @endauth
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Latest</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Categories</a>
+                            <a class="nav-link" href="#">Articles</a>
                         </li>
                     </ul>
 
