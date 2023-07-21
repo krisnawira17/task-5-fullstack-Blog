@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Post</h1>
+        <h1>Edit Post</h1>
         @if ($errors->any())
             <div class="alert alert-danger mt-4">
                 <ul>
@@ -12,23 +12,23 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{ route('articles.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('articles.update', ['id' => $article->id]) }}" enctype="multipart/form-data">
             @csrf
-            <div>
+        <div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-                        placeholder="">
+                        placeholder="" value="{{old('title', $article->title)}}">
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Content</label>
-                    <textarea class="form-control" name="content" id="content" rows="20" style="resize: none"></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="20" style="resize: none">{{old('content', $article->content)}}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
                     <input type="file" class="form-control" name="image" id="image" accept="image/jpeg, image/png"
                         aria-describedby="fileHelpId">
-                    <div id="fileHelpId" class="form-text">only JPEG & PNG</div>
+                    <div id="fileHelpId" class="form-text">only JPEG & PNG, please upload your image again</div>
                 </div>
                 <div class="mb-3">
                     <label for="categories_name" class="form-label">Categories</label>
