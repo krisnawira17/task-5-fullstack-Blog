@@ -40,6 +40,6 @@ Route::get('/my_article',[App\Http\controllers\ArticlesController::class, 'showP
 //Removal of Article
 Route::delete('/my_article/{id}',[App\Http\controllers\ArticlesController::class, 'destroy'])->name('article.remove');
 
-//Edit or update for article
+//Edit and update for article
 Route::get('/my_article/edit/{id}',[App\Http\controllers\ArticlesController::class, 'edit'])->name('article.edit');
 Route::post('/my_article/update/{id}',[App\Http\Controllers\ArticlesController::class, 'update'])->name('articles.update');
